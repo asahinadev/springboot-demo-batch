@@ -1,0 +1,25 @@
+version: "3"
+services:
+# mysql
+   db:
+      image: mysql:8
+      container_name: springboot-demo-batch-db
+      volumes:
+      - /var/lib/mysql
+      ports:
+      - 3306:3306
+      command: --character-set-server=utf8 --collation-server=utf8_unicode_ci
+      environment:
+         TZ: Asia/Tokyo
+         MYSQL_ROOT_PASSWORD: spring-demo
+         MYSQL_DATABASE: spring-demo
+         MYSQL_USER: spring-demo
+         MYSQL_PASSWORD: spring-demo
+# adminer
+   adminer:
+      image: adminer
+      container_name: springboot-demo-batch-adminer
+      environment:
+         ADMINER_DESIGN: rmsoft_blue
+      ports:
+      - 30000:8080

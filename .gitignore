@@ -35,5 +35,7 @@ out/
 *.jar
 *.war
 
-
-
+/.project
+/.apt_generated_tests/
+/bin
+.project
